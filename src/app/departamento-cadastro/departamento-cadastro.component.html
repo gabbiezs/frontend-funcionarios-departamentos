@@ -1,0 +1,58 @@
+<div class="card">
+
+  <h2>Cadastro de Departamento</h2>
+
+  <form #formDepartamento="ngForm" (ngSubmit)="salvar(formDepartamento)">
+
+    <div class="field">
+      <label>Nome do Departamento</label>
+
+      <input
+        type="text"
+        pInputText
+        name="nomeDepartamento"
+        [(ngModel)]="departamento.nomeDepartamento"
+        #nomeDepartamento="ngModel"
+        required
+        minlength="2"
+        placeholder="Digite o nome"
+      />
+
+      <!-- Mensagem erro campo obrigatório -->
+      <small *ngIf="nomeDepartamento.invalid && nomeDepartamento.touched"
+             class="p-error">
+        Nome é obrigatório.
+      </small>
+
+      <!-- Mensagem erro tamanho mínimo -->
+      <small *ngIf="nomeDepartamento.errors?.['minlength'] && nomeDepartamento.touched"
+             class="p-error">
+        Deve ter no mínimo 2 caracteres.
+      </small>
+
+    </div>
+
+    <br>
+
+    <!-- Botões -->
+
+    <button
+      pButton
+      type="submit"
+      label="Salvar"
+      icon="pi pi-save"
+      [disabled]="formDepartamento.invalid">
+    </button>
+
+    <button
+      pButton
+      type="button"
+      label="Novo"
+      icon="pi pi-plus"
+      class="p-button-secondary"
+      style="margin-left: 10px;">
+    </button>
+
+  </form>
+
+</div>

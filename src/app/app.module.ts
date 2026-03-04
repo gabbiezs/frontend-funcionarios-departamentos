@@ -6,17 +6,19 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { SidebarModule } from 'primeng/sidebar';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DepartamentosPesquisaComponent } from './departamentos-pesquisa/departamentos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DepartamentoCadastroComponent } from './departamento-cadastro/departamento-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepartamentosPesquisaComponent,
-    NavbarComponent
+    NavbarComponent,
+    DepartamentoCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ButtonModule,
     InputTextModule,
     TooltipModule,
-    SidebarModule
+    SidebarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
